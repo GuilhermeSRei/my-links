@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Poppins&display=swap');
+
+:root {
+    /* Cores */
+    --cor-light-50: #f8fafc;
+
+    --cor-light-90: #fd1d1d;
+    --cor-light-100: #e1306c;
+    --cor-light-200: #c13584;
+    --cor-light-300: #833ab4;
+    --cor-light-400: #5851db;
+    --cor-light-500: #405de6;
+
+    --cor-dark-90: #414141;
+    --cor-dark-100: #000000;
+
+    --cor-gradient-light: linear-gradient(120deg, var(--cor-light-90), var(--cor-light-100), var(--cor-light-200), var(--cor-light-300), var(--cor-light-400), var(--cor-light-500));
+
+    --cor-gradient-dark: linear-gradient(120deg, var(--cor-dark-90), var(--cor-dark-100));
+
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#conteiner {
+    height: 100vh;
+    width: 100%;
+    background: var(--cor-gradient-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: light-to-dark 10s ease-in-out;
+}
+
+#page {
+    background: var(--cor-light-50);
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    padding: 30px 40px;
+    border-radius: 8px;
+    gap: 30px;
+
+
+}
+
+#card_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#card_header h1 {
+    font-size: 40px;
+    position: relative;
+}
+
+#card_header h1::before {
+    position: absolute;
+    content: " ";
+    width: 57.5%;
+    background: var(--cor-gradient-light);
+    height: 3px;
+    bottom: 9px;
+    left: 67px;
+    border-radius: 8px;
+}
+
+#mode_icon {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+#social_media img {
+    width: 60px;
+}
+
+#social_media img:hover {
+    transform: scale(1.07);
+    transition: dark-to-light 0.3s ease-in-out;
+}
+
+.dark#conteiner {
+    background: var(--cor-gradient-dark);
+    animation: light-to-dark 0.3s ease-in-out;
+}
+
+@keyframes dark-to-light {
+    0% {
+        background-color: var(--cor-dark-100);
+    }
+
+    100% {
+        background-color: var(--cor-dark-90);
+    }
+}
+
+@keyframes light-to-dark {
+    0% {
+        background-color: var(--cor-dark-90);
+    }
+
+    100% {
+        background-color: var(--cor-dark-100);
+    }
+}
